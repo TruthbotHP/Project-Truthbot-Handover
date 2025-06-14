@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TruthBot V7 Manual</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1, h2 {
+            color: #1a73e8;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TruthBot V7 Manual</h1>
+    <input type="text" id="searchBox" placeholder="Search the manual..." onkeyup="searchText()">
+    <div id="content">
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>TruthBot is a local AI inference and moderation engine built for custom LLM pipelines, plugin integration, and logic-level content reasoning via Honesty Probability (HP) scoring.</p>
+        </div>
+
+        <div class="section">
+            <h2>Core Functions</h2>
+            <pre>
+1. LIERWall(prompt_text, context=None)
+2. score_hp(prompt)
+3. apply_hp_filter(prompt, min_score)
+4. try_llm(prompt, allow_remote=True)
+5. detect_capabilities()
+6. load_plugins()
+7. run_diagnostic_pass(source_code)
+8. GUI class: TruthBotGUI
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>Plugin Routing System</h2>
+            <p>Plugins auto-loaded from the /llm_plugins/ folder. Example:</p>
+            <pre>
+def solve_math(prompt): ...
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>HP Score System</h2>
+            <p>HP Score evaluates honesty/clarity. Filtered optionally.</p>
+        </div>
+
+        <div class="section">
+            <h2>CLI Usage</h2>
+            <pre>
+python launch_truthbot.py
+python truthbot_gui.py
+python -c "from truthbot.hardware import detect_capabilities; print(detect_capabilities())"
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>Glossary</h2>
+            <ul>
+                <li><b>LIERWall</b>: Logic/Inference/Ethical Reasoning Wall</li>
+                <li><b>HP Score</b>: Honesty Probability Metric</li>
+                <li><b>Plugin</b>: Modular extension</li>
+                <li><b>Fallback</b>: Tries remote if local fails</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+    function searchText() {
+        var input = document.getElementById('searchBox').value.toLowerCase();
+        var content = document.getElementById('content');
+        var sections = content.getElementsByClassName('section');
+        for (var i = 0; i < sections.length; i++) {
+            var text = sections[i].innerText.toLowerCase();
+            sections[i].style.display = text.includes(input) ? '' : 'none';
+        }
+    }
+    </script>
+</body>
+</html>

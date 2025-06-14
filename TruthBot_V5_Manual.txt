@@ -1,0 +1,60 @@
+
+TruthBot V5 Manual
+===================
+
+Overview:
+---------
+TruthBot V5 is a modular local language interface with pluggable models,
+evaluative reasoning filters, and scriptable plugin routing.
+
+Core Modules:
+-------------
+1. core.py
+   - LIERWall(prompt_text, context)
+     Evaluates the 'Honesty Probability (HP)' of input.
+     Returns:
+       {
+         "original": str,
+         "hp_score": float,
+         "analysis": str
+       }
+
+2. utils.py
+   - run_diagnostic_pass()
+   - model_probe(model_path)
+   - available_llm_plugins(directory)
+
+3. llm_plugins/
+   - sentiment_plugin.py
+     • analyze_sentiment(text)
+   - math_plugin.py
+     • solve_math(expression)
+   - qa_plugin.py
+     • answer_question(question, context)
+
+4. llm_config.json
+   - JSON routing rules for plugin dispatch
+
+5. launch_truthbot.py
+   - Bootstraps the environment and prints outputs from core plugins
+
+Function Glossary:
+------------------
+- HP Score: Honesty Probability (0.0 - 1.0)
+- Diagnostic Pass: Captures Python/env/platform state
+- Plugin: User-defined routing logic callable via config
+
+Setup:
+------
+To run:
+$ python launch_truthbot.py
+
+To modify routing:
+Edit `truthbot/llm_plugins/llm_config.json`
+
+To add new models:
+Place `.bin` model files in the appropriate folder and update the config.
+
+License:
+--------
+OpenUse, Non-commercial research preferred.

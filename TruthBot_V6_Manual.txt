@@ -1,0 +1,122 @@
+
+========================================
+            TruthBot V6 Manual
+========================================
+
+📘 INTRODUCTION
+TruthBot is a local AI inference and moderation engine built for custom LLM pipelines, plugin integration, and logic-level content reasoning via Honesty Probability (HP) scoring.
+
+----------------------------------------
+🔧 CORE FUNCTION BREAKDOWN
+----------------------------------------
+
+1. LIERWall(prompt_text: str, context=None) -> dict
+   Purpose: Runs logical and ethical evaluations.
+   Returns: {
+     "sanitized_prompt": str,
+     "hp_score": float,
+     "notes": str
+   }
+
+2. score_hp(prompt: str) -> float
+   Returns an Honesty Probability score (0.0 - 1.0) for a prompt.
+
+3. apply_hp_filter(prompt: str, min_score=0.5) -> dict
+   Returns:
+     { "hp_score": float, "prompt": str, "pass": bool }
+
+4. try_llm(prompt: str, allow_remote=True)
+   Routes prompt to either local or external LLM fallback.
+
+5. detect_capabilities()
+   Detects available hardware (GPU/CPU + Torch details).
+
+6. load_plugins()
+   Auto-loads all `.py` modules in `/llm_plugins/`.
+
+7. run_diagnostic_pass(source_code)
+   Performs a syntax validation and reports issues.
+
+8. GUI class: TruthBotGUI (truthbot_gui.py)
+   Tkinter GUI with prompt input and plugin output.
+
+----------------------------------------
+🧩 PLUGIN ROUTING SYSTEM
+----------------------------------------
+
+All plugin files inside `/truthbot/llm_plugins/` with a `.py` extension are automatically loaded.
+
+Plugin Example (math_plugin.py):
+```python
+def solve_math(prompt):
+    # custom logic here
+```
+
+These are dynamically invoked via plugin manager:
+```python
+plugins = load_plugins()
+response = plugins['math_plugin'].solve_math(prompt)
+```
+
+Default plugins:
+- sentiment_plugin.py
+- math_plugin.py
+- qa_plugin.py
+
+----------------------------------------
+📊 HP SCORE SYSTEM EXPLANATION
+----------------------------------------
+
+- score_hp(): Assigns HP score between 0.0 - 1.0.
+- Factors: negation terms, contradictions, length, clarity.
+- Children/elderly filters can reject prompts below thresholds.
+- Output routing may respect HP score rules.
+
+----------------------------------------
+🖥️ CLI USAGE GUIDE
+----------------------------------------
+
+Run TruthBot via CLI:
+```bash
+python launch_truthbot.py
+```
+
+For GUI mode:
+```bash
+python truthbot_gui.py
+```
+
+To check system hardware:
+```bash
+python -c "from truthbot.hardware import detect_capabilities; print(detect_capabilities())"
+```
+
+----------------------------------------
+📚 GLOSSARY OF INTERNAL CONCEPTS
+----------------------------------------
+
+- LIERWall: Logic/Inference/Ethical Reasoning Wall.
+- HP Score: Metric for honesty/clarity of prompt.
+- Plugins: Modular logic files for answering or processing.
+- Fallback: If local fails, remote LLM is used.
+- Diagnostic Pass: Syntax scanner for secure integration.
+- Prompt Sanitization: Minor cleanup, not censorship.
+
+----------------------------------------
+📁 FOLDER STRUCTURE
+----------------------------------------
+
+- /truthbot/
+    ├── core.py
+    ├── gui.py
+    ├── plugin_manager.py
+    ├── llm_interface.py
+    ├── li_hp_scoring.py
+    ├── hardware.py
+    └── llm_plugins/
+         ├── math_plugin.py
+         ├── sentiment_plugin.py
+         └── qa_plugin.py
+
+----------------------------------------
+
