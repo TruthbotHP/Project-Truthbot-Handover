@@ -1,0 +1,63 @@
+[
+  {
+    "clause": "The undersigned agrees never to speak about the incident again.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": [],
+    "legal_red_flags": false
+  },
+  {
+    "clause": "In the presence of the cross, the contract was solemnly signed.",
+    "hp_score": 0.4,
+    "truth_flag": "exposing_coercion",
+    "symbols": [
+      "cross"
+    ],
+    "suppositions": [
+      "Symbol 'cross' suggests coercion, trauma, or suppression context."
+    ],
+    "deductions": [
+      "Deduction from cross",
+      "Deduction from cross"
+    ],
+    "legal_red_flags": false
+  },
+  {
+    "clause": "This agreement binds all parties to eternal silence under penalty.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": [],
+    "legal_red_flags": true
+  },
+  {
+    "clause": "Failure to comply may result in spiritual condemnation.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": [],
+    "legal_red_flags": true
+  },
+  {
+    "clause": "The employee waives all rights to legal action upon signing.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": [],
+    "legal_red_flags": true
+  },
+  {
+    "clause": "Silence is considered acceptance of all contractual terms.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": [],
+    "legal_red_flags": true
+  }
+]

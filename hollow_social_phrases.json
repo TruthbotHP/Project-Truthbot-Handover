@@ -1,0 +1,51 @@
+{
+  "like": {
+    "hp": 0.35,
+    "issue": "Often used in manipulative or hollow affirmations; lacks depth.",
+    "suggest": [
+      "resonates with",
+      "holds value for",
+      "connects to meaning"
+    ]
+  },
+  "empower": {
+    "hp": 0.45,
+    "issue": "Implies top-down grant of agency; can obscure relational power.",
+    "suggest": [
+      "recognize strength",
+      "support self-expression"
+    ]
+  },
+  "resilience": {
+    "hp": 0.5,
+    "issue": "Can normalize trauma and overburden survivors with praise.",
+    "suggest": [
+      "well-supported",
+      "held with care"
+    ]
+  },
+  "engage": {
+    "hp": 0.4,
+    "issue": "Corporate euphemism for control or attention extraction.",
+    "suggest": [
+      "meet meaningfully",
+      "be present with"
+    ]
+  },
+  "inspire": {
+    "hp": 0.4,
+    "issue": "Used performatively; often without substance or reciprocity.",
+    "suggest": [
+      "reflect mutual insight",
+      "reveal shared courage"
+    ]
+  },
+  "care": {
+    "hp": 0.5,
+    "issue": "Common in institutional coercion or pacification speech.",
+    "suggest": [
+      "act with regard",
+      "stay present with"
+    ]
+  }
+}

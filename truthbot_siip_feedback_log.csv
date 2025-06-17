@@ -1,0 +1,11 @@
+timestamp,input,hp_score,truth_flag,symbols,top_supposition,top_deduction,user_feedback
+2025-06-16T18:31:20.360452,The flag represents unity and obedience.,0.75,neutral,,N/A,N/A,
+2025-06-16T18:31:20.360452,This contract forces silence on abuse.,0.75,neutral,,N/A,N/A,
+2025-06-16T18:31:20.360452,The sword was a symbol of justice.,0.75,neutral,,N/A,N/A,
+2025-06-16T18:31:20.360452,They wore uniforms to assert dominance.,0.75,neutral,,N/A,N/A,
+2025-06-16T18:31:20.360452,Shame was used to control behavior.,0.75,neutral,,N/A,N/A,
+2025-06-16T18:31:20.360452,The halo implies divine authority.,0.75,neutral,,N/A,N/A,
+2025-06-16T18:31:20.360452,This agreement was enforced using the cross.,0.4,exposing_coercion,cross,"Symbol 'cross' suggests coercion, trauma, or suppression context.",Deduction from cross,
+2025-06-16T18:31:20.360452,Sacrifice is expected for the good of all.,0.75,neutral,,N/A,N/A,
+2025-06-16T18:31:20.360452,A crucifix hung above the courtroom.,0.45,exposing_coercion,crucifix,"Symbol 'crucifix' suggests coercion, trauma, or suppression context.",Deduction from crucifix,
+2025-06-16T18:31:20.360452,Contracts of silence must be upheld.,0.75,neutral,,N/A,N/A,

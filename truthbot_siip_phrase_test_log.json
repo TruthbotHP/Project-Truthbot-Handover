@@ -1,0 +1,96 @@
+[
+  {
+    "input": "The flag represents unity and obedience.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  },
+  {
+    "input": "This contract forces silence on abuse.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  },
+  {
+    "input": "The sword was a symbol of justice.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  },
+  {
+    "input": "They wore uniforms to assert dominance.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  },
+  {
+    "input": "Shame was used to control behavior.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  },
+  {
+    "input": "The halo implies divine authority.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  },
+  {
+    "input": "This agreement was enforced using the cross.",
+    "hp_score": 0.4,
+    "truth_flag": "exposing_coercion",
+    "symbols": [
+      "cross"
+    ],
+    "suppositions": [
+      "Symbol 'cross' suggests coercion, trauma, or suppression context."
+    ],
+    "deductions": [
+      "Deduction from cross",
+      "Deduction from cross"
+    ]
+  },
+  {
+    "input": "Sacrifice is expected for the good of all.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  },
+  {
+    "input": "A crucifix hung above the courtroom.",
+    "hp_score": 0.45,
+    "truth_flag": "exposing_coercion",
+    "symbols": [
+      "crucifix"
+    ],
+    "suppositions": [
+      "Symbol 'crucifix' suggests coercion, trauma, or suppression context."
+    ],
+    "deductions": [
+      "Deduction from crucifix",
+      "Deduction from crucifix"
+    ]
+  },
+  {
+    "input": "Contracts of silence must be upheld.",
+    "hp_score": 0.75,
+    "truth_flag": "neutral",
+    "symbols": [],
+    "suppositions": [],
+    "deductions": []
+  }
+]
