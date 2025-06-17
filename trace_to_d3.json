@@ -1,0 +1,25 @@
+{
+  "name": "fire",
+  "children": [
+    {
+      "name": "destruction",
+      "domain": "trauma",
+      "cpu": 5.1
+    },
+    {
+      "name": "loss",
+      "domain": "trauma",
+      "cpu": 6.2
+    },
+    {
+      "name": "guilt",
+      "domain": "trauma",
+      "cpu": 7.3
+    },
+    {
+      "name": "withdrawal",
+      "domain": "trauma",
+      "cpu": 8.4
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "care": {
+    "hp": 0.5,
+    "issue": "Can mask coercion",
+    "suggest": [
+      "act with regard"
+    ]
+  },
+  "resilience": {
+    "hp": 0.5,
+    "issue": "May normalize trauma",
+    "suggest": [
+      "held with care"
+    ]
+  },
+  "empower": {
+    "hp": 0.45,
+    "issue": "Implies top-down grant of agency; can obscure relational power.",
+    "suggest": [
+      "support self-expression"
+    ]
+  },
+  "engage": {
+    "hp": 0.4,
+    "issue": "Corporate euphemism for control or attention extraction.",
+    "suggest": [
+      "meet meaningfully",
+      "be present with"
+    ]
+  },
+  "inspire": {
+    "hp": 0.4,
+    "issue": "Used performatively; often without substance or reciprocity.",
+    "suggest": [
+      "reflect mutual insight",
+      "reveal shared courage"
+    ]
+  },
+  "like": {
+    "hp": 0.35,
+    "issue": "Often used in manipulative or hollow affirmations; lacks depth.",
+    "suggest": [
+      "resonates with",
+      "holds value for",
+      "connects to meaning"
+    ]
+  },
+  "adopt": {
+    "hp": 0.2,
+    "issue": "Implies coercion, ownership, or colonial family disruption.",
+    "suggest": [
+      "align with",
+      "integrate consciously",
+      "form a relational bond with"
+    ]
+  }
+}

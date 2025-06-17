@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Truthbot Symbolic Trace Viewer</title>
+  <style>
+    .node circle {
+      fill: #999;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
+    .node text {
+      font: 12px sans-serif;
+    }
+    .link {
+      fill: none;
+      stroke: #555;
+      stroke-opacity: 0.4;
+      stroke-width: 1.5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Truthbot Recursive Symbolic Trace</h2>
+  <svg width="960" height="800"></svg>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script>
+    var svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height"),
+        g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    var tree = d3.tree()
+        .size([2 * Math.PI, 400])
+        .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+
+    var stratify = d3.stratify();
+
+    d3.json("trace_to_d3.json").then(function(data) {
+      var root = d3.hierarchy(data);
+
+      tree(root);
+
+      var link = g.selectAll(".link")
+        .data(root.links())
+        .enter().append("path")
+          .attr("class", "link")
+          .attr("d", d3.linkRadial()
+              .angle(function(d) { return d.x; })
+              .radius(function(d) { return d.y; }));
+
+      var node = g.selectAll(".node")
+        .data(root.descendants())
+        .enter().append("g")
+          .attr("class", "node")
+          .attr("transform", function(d) {
+            return "rotate(" + (d.x * 180 / Math.PI - 90) + ")translate(" + d.y + ",0)";
+          });
+
+      node.append("circle")
+          .attr("r", 5)
+          .style("fill", function(d) {
+            switch (d.data.domain) {
+              case "trauma": return "#e74c3c";
+              case "healing": return "#2ecc71";
+              case "self-reflection": return "#f39c12";
+              default: return "#999";
+            }
+          });
+
+      node.append("title")
+          .text(function(d) {
+            return d.data.name + " (CPU: " + (d.data.cpu || 0) + "%)";
+          });
+
+      node.append("text")
+          .attr("dy", "0.31em")
+          .attr("x", function(d) { return d.x < Math.PI === !d.children ? 6 : -6; })
+          .attr("text-anchor", function(d) { return d.x < Math.PI === !d.children ? "start" : "end"; })
+          .attr("transform", function(d) { return d.x >= Math.PI ? "rotate(180)" : null; })
+          .text(function(d) { return d.data.name; });
+    });
+  </script>
+</body>
+</html>
